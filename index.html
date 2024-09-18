@@ -49,7 +49,19 @@
     <link href="./sb-addons/jsx-9/register-bundle.js" rel="modulepreload" />
     
     <link href="./sb-addons/storybook-10/manager-bundle.js" rel="modulepreload" />
-       
+      <!--
+    Add code to be inserted into the Storybook manager <head> below.
+    @see https://storybook.js.org/docs/react/addons/writing-presets#previewmanager-templates
+
+    This is useful if you want to hide parts of the interface.
+-->
+<style>
+    /* define a minimum width for the logo */
+    .sidebar-header a > img {
+        min-width: 120px;
+    }
+</style>
+ 
 
     <style>
       #storybook-root[hidden] {
@@ -71,7 +83,8 @@
   "buildStoriesJson": false,
   "storyStoreV7": false,
   "argTypeTargetsV7": true,
-  "legacyDecoratorFileOrder": false
+  "legacyDecoratorFileOrder": false,
+  "disallowImplicitActionsInRenderV8": false
 };
         
       
@@ -92,8 +105,6 @@
       
         
           window['CONFIG_TYPE'] = "PRODUCTION";
-        
-      
         
       
         
